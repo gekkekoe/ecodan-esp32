@@ -38,4 +38,5 @@ One of the following
 * https://github.com/tobias-93/esphome-ecodan-heatpump
 
 Here's how it's connected inside my heatpump:
+
 ![image](https://github.com/gekkekoe/ecodan-esp32/blob/main/ecodan-ha-local/img/m5stack_installed.jpg?raw=true)
