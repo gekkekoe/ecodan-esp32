@@ -28,11 +28,14 @@ Cable mapping (from left to right)
 # required firmware
 One of the following
 * https://github.com/rbroker/ecodan-ha-local
-  > * Use https://github.com/gekkekoe/ecodan-esp32/blob/main/ecodan-ha-local/platform.ini to build with platformIO
+  > * Use https://github.com/gekkekoe/ecodan-esp32/blob/main/ecodan-ha-local/platform.ini to build with platformIO. Find your definition https://docs.platformio.org/en/latest//boards/ and set it in the platform.ini. Please note that the esp32-s3 is only supported in platformIO version >= 6.
   > * Flash the firmware to the esp32
   > * Power down (!) the heatpump and connect the grove-cn105 and esp32
   > * Power up the heatpump 
   > * find the ip assigned to the ecodan-ha-local and access the configuration via http
-  > * configure Tx, Rx pins and mqtt. Once rebooted, it should be auto discovered in home assistant. For more details on how to configure ecodan-ha-local please read https://github.com/rbroker/ecodan-ha-local/blob/main/README.md
+  > * configure Tx, Rx pins, mqtt and wifi. Once rebooted, it should be auto discovered in home assistant. For more details on how to configure ecodan-ha-local please read https://github.com/rbroker/ecodan-ha-local/blob/main/README.md
 
 * https://github.com/tobias-93/esphome-ecodan-heatpump
+
+Here's how it's connected inside my heatpump:
+![image](https://github.com/gekkekoe/ecodan-esp32/blob/main/ecodan-ha-local/img/m5stack_installed.jpg?raw=true)
