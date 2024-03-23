@@ -8,8 +8,8 @@ Tested boards
 
 | Board | Link | Notes |
 |:---|:----:|:---|
-| m5stack Atom (ESP32 variants) | https://docs.m5stack.com/en/core/AtomS3 | Grove ports on the m5stack boards have built in level shifters |
-| m5stack AtomS3 (ESP32-S3 variants) | https://docs.m5stack.com/en/core/AtomS3 | Grove ports on the m5stack boards have built in level shifters |
+| m5stack Atom (ESP32 variants) | https://docs.m5stack.com/en/core/ATOM%20Lite | Grove ports on the m5stack boards have built in level shifters |
+| m5stack AtomS3 (ESP32-S3 variants) | https://docs.m5stack.com/en/core/AtomS3%20Lite | Grove ports on the m5stack boards have built in level shifters |
 
 Cable
 * Get one of the grove female cable and a ST PAP-05V-S connector. Remove one end of the grove connector and replace it with a ST PAP-05V-S connector. Here's an example:
