@@ -140,3 +140,19 @@ number:
       name: Room temperature setpoint
     zone1_flow_temp_setpoint:
       name: Flow temperature setpoint
+
+light:
+#G35=RGB WS2812C-2020
+  - platform: esp32_rmt_led_strip
+    name: Led
+    id: led
+    internal: true
+    rgb_order: GRB
+    pin: 35
+    num_leds: 4
+#    brightness: 0.7
+    # RMT 0 channels will be occupied by IR
+    rmt_channel: 1
+    chipset: ws2812
+    restore_mode: ALWAYS_OFF
+#    internal: True
