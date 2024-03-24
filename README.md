@@ -26,31 +26,38 @@ Cable mapping (from left to right)
 *Note: pin 5 (12v) on the cn105 is not used.*
 
 # required firmware
-One of the following
+One of the following:
+1) ecodan-ha-local
+2) esphome-ecodan-heatpump
 
-# build ecodan-ha-local firmware
+# 1) build ecodan-ha-local firmware
+* Get visual studio code with the platformIO plugin
 * Use https://github.com/gekkekoe/ecodan-esp32/blob/main/ecodan-ha-local/platform.ini to build with platformIO. Find your definition https://docs.platformio.org/en/latest//boards/ and set it in the platform.ini. Please note that the esp32-s3 is only supported in platformIO version >= 6.
 * Flash the firmware to the esp32
 * Power down (!) the heatpump and connect the grove-cn105 and esp32
 * Power up the heatpump 
 * find the ip assigned to the ecodan-ha-local and access the configuration via http
-* configure Tx, Rx pins (my heatpump Xxxx-vm2d with controller unit FTC6 seems to have the Rx/Tx swapped, if the esp cannot connect to the heatpump, swap the Rx/Tx in the configuration), led indicator (pin 35), mqtt and wifi. Once rebooted, it should be auto discovered in home assistant. For more details on how to configure ecodan-ha-local please read https://github.com/rbroker/ecodan-ha-local/blob/main/README.md
+* Configure Tx, Rx pins (my heatpump Xxxx-vm2d with controller unit FTC6 seems to have the Rx/Tx swapped, if the esp cannot connect to the heatpump, swap the Rx/Tx in the configuration), led indicator (pin 35), mqtt and wifi. Once rebooted, it should be auto discovered in home assistant. For more details on how to configure ecodan-ha-local please read https://github.com/rbroker/ecodan-ha-local/blob/main/README.md
 
-# build esphome ecodan-heatpump-firmware
-If you want to manage the ecodan esphome from home assistant, add the esphome addon (https://esphome.io/guides/getting_started_hassio.html). You will need the api key from this step to fill in the `secrets.yaml`. For more detailed info: https://github.com/tobias-93/esphome-ecodan-heatpump
-* install ESPHome https://esphome.io/guides/getting_started_command_line.html
+# 2) build esphome-ecodan-heatpump firmware
+If you want to manage the ecodan esphome from home assistant, add the esphome add-on (https://esphome.io/guides/getting_started_hassio.html). You will need the api key for `secrets.yaml`. For more detailed info: https://github.com/tobias-93/esphome-ecodan-heatpump
+### Build via home assistant
+https://github.com/tobias-93/esphome-ecodan-heatpump
+
+### Build via cmd line:
+* Install ESPHome https://esphome.io/guides/getting_started_command_line.html
     ```console
     python3 -m venv venv
     source venv/bin/activate
     pip3 install wheel
     pip3 install esphome
     ```
-* fill in `secrets.yaml` and copy the `ecodan-esphome-esp32s3.yaml` to your esphome folder and edit the values
-* build
+* Fill in `secrets.yaml` and copy the `ecodan-esphome-esp32s3.yaml` to your esphome folder and edit the values (*check GPO pins (uart: section), you might need to swap the pins in the config*)
+* Build
 ```console
 esphome compile ecodan-esphome-esp32s3.yaml
 ```
-* find your tty* where the esp32 is connected to, use `sudo dmesg | grep tty`. On my machine it was `ttyACM0` for usb-c, and ttyUSB0 for usb-a.
+* Find your tty* where the esp32 is connected to, use `sudo dmesg | grep tty`. On my machine it was `ttyACM0` for usb-c, and ttyUSB0 for usb-a.
 * connect your esp32 via usb and flash
 ```console 
 esphome upload --device=/dev/ttyACM0 ecodan-esphome-esp32s3.yaml
