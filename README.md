@@ -15,7 +15,7 @@ Cable
 * Get one of the grove female cable and a ST PAP-05V-S connector. Remove one end of the grove connector and replace it with a ST PAP-05V-S connector. Here's an example:
 ![image](https://github.com/gekkekoe/ecodan-esp32/blob/main/img/m5stack_cn105.jpg?raw=true)
 
-Cable mapping (from left to right)
+Pin mapping (from left to right)
 | grove | cn105 |
 |:---|:---|
 |pin 1 - black (gnd) | pin 4 - black (gnd) |
