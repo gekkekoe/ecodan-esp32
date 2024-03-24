@@ -7,12 +7,9 @@ esphome:
   friendly_name: ${friendlyName}
 
 esp32:
-  board: m5stack-atoms3
-  variant: esp32s3
+  board: esp32-s3-devkitc-1
   framework:
     type: arduino
-    version: 2.0.14
-    platform_version: 6.5.0
 
 packages:
   ecodan-heatpump: github://tobias-93/esphome-ecodan-heatpump/heatpump.yaml@main
@@ -25,8 +22,6 @@ ota:
   password: !secret heatpump_ota_password
 
 api:
-  encryption:
-    key: !secret heatpump_encryption_key
 
 external_components:
   - source: github://tobias-93/esphome-ecodan-heatpump@main
