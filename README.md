@@ -38,10 +38,12 @@ One of the following
 * https://github.com/tobias-93/esphome-ecodan-heatpump
 If you want to manage the ecodan esphome from home assistant, add the esphome addon (https://esphome.io/guides/getting_started_hassio.html). You will need the api key from this step to fill in the `secrets.yaml`. For more detailed info: https://github.com/tobias-93/esphome-ecodan-heatpump
 > * install ESPHome https://esphome.io/guides/getting_started_command_line.html
-    ```> python3 -m venv venv```
-    ```> source venv/bin/activate```
-    ```> pip3 install wheel```
-    ```> pip3 install esphome```
+    ```console
+    python3 -m venv venv
+    source venv/bin/activate
+    pip3 install wheel
+    pip3 install esphome
+    ```
 > * fill in `secrets.yaml` and copy the `ecodan-esphome-esp32s3.yaml` to your esphome folder and edit the values
 > * build
 ```> esphome compile ecodan-esphome-esp32s3.yaml```
