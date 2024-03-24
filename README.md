@@ -27,7 +27,8 @@ Cable mapping (from left to right)
 
 # required firmware
 One of the following
-* https://github.com/rbroker/ecodan-ha-local
+
+# build ecodan-ha-local firmware
 * Use https://github.com/gekkekoe/ecodan-esp32/blob/main/ecodan-ha-local/platform.ini to build with platformIO. Find your definition https://docs.platformio.org/en/latest//boards/ and set it in the platform.ini. Please note that the esp32-s3 is only supported in platformIO version >= 6.
 * Flash the firmware to the esp32
 * Power down (!) the heatpump and connect the grove-cn105 and esp32
@@ -35,7 +36,7 @@ One of the following
 * find the ip assigned to the ecodan-ha-local and access the configuration via http
 * configure Tx, Rx pins (my heatpump Xxxx-vm2d with controller unit FTC6 seems to have the Rx/Tx swapped, if the esp cannot connect to the heatpump, swap the Rx/Tx in the configuration), led indicator (pin 35), mqtt and wifi. Once rebooted, it should be auto discovered in home assistant. For more details on how to configure ecodan-ha-local please read https://github.com/rbroker/ecodan-ha-local/blob/main/README.md
 
-* https://github.com/tobias-93/esphome-ecodan-heatpump
+# build esphome ecodan-heatpump-firmware
 If you want to manage the ecodan esphome from home assistant, add the esphome addon (https://esphome.io/guides/getting_started_hassio.html). You will need the api key from this step to fill in the `secrets.yaml`. For more detailed info: https://github.com/tobias-93/esphome-ecodan-heatpump
 * install ESPHome https://esphome.io/guides/getting_started_command_line.html
     ```console
@@ -46,11 +47,14 @@ If you want to manage the ecodan esphome from home assistant, add the esphome ad
     ```
 * fill in `secrets.yaml` and copy the `ecodan-esphome-esp32s3.yaml` to your esphome folder and edit the values
 * build
-```console esphome compile ecodan-esphome-esp32s3.yaml```
+```console
+esphome compile ecodan-esphome-esp32s3.yaml
+```
 * find your tty* where the esp32 is connected to, use `sudo dmesg | grep tty`. On my machine it was `ttyACM0` for usb-c, and ttyUSB0 for usb-a.
 * connect your esp32 via usb and flash
-```console esphome upload --device=/dev/ttyACM0 ecodan-esphome-esp32s3.yaml```
-
+```console 
+esphome upload --device=/dev/ttyACM0 ecodan-esphome-esp32s3.yaml
+```
 
 Here's how it's connected inside my heatpump:
 
