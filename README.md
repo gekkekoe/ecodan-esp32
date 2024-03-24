@@ -33,7 +33,7 @@ One of the following
   > * Power down (!) the heatpump and connect the grove-cn105 and esp32
   > * Power up the heatpump 
   > * find the ip assigned to the ecodan-ha-local and access the configuration via http
-  > * configure Tx, Rx pins, mqtt and wifi. Once rebooted, it should be auto discovered in home assistant. For more details on how to configure ecodan-ha-local please read https://github.com/rbroker/ecodan-ha-local/blob/main/README.md
+  > * configure Tx, Rx pins (on my heatpump, the Rx/Tx seems to be swapped, if the esp cannot connect to the heatpump, swap the Rx/Tx in the configuration), led indicator (pin 35), mqtt and wifi. Once rebooted, it should be auto discovered in home assistant. For more details on how to configure ecodan-ha-local please read https://github.com/rbroker/ecodan-ha-local/blob/main/README.md
 
 * https://github.com/tobias-93/esphome-ecodan-heatpump
 
