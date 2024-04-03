@@ -20,8 +20,8 @@ Pin mapping (from left to right)
 |:---|:---|
 |pin 1 - black (gnd) | pin 4 - black (gnd) |
 |pin 2 - red (5v) | pin 3 - red (5v) |
-|pin 3 - white (GPIO 1) | pin 2 - white (Tx) |
-|pin 4 - yellow (GPIO 2) | pin 1 - yellow (Rx) |
+|pin 3 - white (GPIO 2) | pin 2 - white (Tx) |
+|pin 4 - yellow (GPIO 1) | pin 1 - yellow (Rx) |
 
 *Note: pin 5 (12v) on the cn105 is not used.*
 
