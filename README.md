@@ -57,7 +57,7 @@ https://github.com/tobias-93/esphome-ecodan-heatpump
 ```console
 esphome compile ecodan-esphome-esp32s3.yaml
 ```
-* Find your tty* where the esp32 is connected to, use `sudo dmesg | grep tty`. On my machine it was `ttyACM0` for usb-c, and `ttyUSB0` for usb-a.
+* To find the tty* where the esp32 is connected at, use `sudo dmesg | grep tty`. On my machine it was `ttyACM0` for usb-c, and `ttyUSB0` for usb-a.
 * Connect your esp32 via usb and flash
 ```console 
 esphome upload --device=/dev/ttyACM0 ecodan-esphome-esp32s3.yaml
